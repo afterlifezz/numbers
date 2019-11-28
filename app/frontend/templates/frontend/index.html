@@ -1,0 +1,22 @@
+{% extends 'frontend/_base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <h1>Number in words</h1>
+                <form method="POST">
+                    {{ form }}
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+        {% if text %}
+            <div class="row">
+                <div class="col" style="margin-top: 20px;">
+                    {{ text }}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
